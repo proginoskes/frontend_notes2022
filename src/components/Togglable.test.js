@@ -9,11 +9,11 @@ describe('<Togglable />', () => {
 
     beforeEach(() => {
         container = render(
-        <Togglable buttonLabel="show...">
-            <div className="testDiv" >
-            togglable content
-            </div>
-        </Togglable>
+            <Togglable buttonLabel="show...">
+                <div className="testDiv" >
+                togglable content
+                </div>
+            </Togglable>
         ).container
     })
 
@@ -34,7 +34,7 @@ describe('<Togglable />', () => {
         const div = container.querySelector('.togglableContent')
         expect(div).not.toHaveStyle('display: none')
     })
-    
+
     test('toggled content can be closed', async () => {
         const user = userEvent.setup()
         const button = screen.getByText('show...')

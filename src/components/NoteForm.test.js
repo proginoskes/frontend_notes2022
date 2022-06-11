@@ -23,7 +23,7 @@ describe('<NoteForm/>', () => {
     test('updates parent state and calls onSubmit by placeholder text', async () => {
         const createNote = jest.fn()
 
-        render(<NoteForm createNote={createNote} />) 
+        render(<NoteForm createNote={createNote} />)
 
         const input = screen.getByPlaceholderText('write a note')
         const sendButton = screen.getByText('save')
@@ -37,7 +37,7 @@ describe('<NoteForm/>', () => {
     test('updates parent state and calls onSubmit by id', async () => {
         const createNote = jest.fn()
 
-        const { container } = render(<NoteForm createNote={createNote} />) 
+        const { container } = render(<NoteForm createNote={createNote} />)
 
         const input = container.querySelector('#note-input')
         const sendButton = screen.getByText('save')

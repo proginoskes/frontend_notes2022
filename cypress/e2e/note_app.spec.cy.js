@@ -33,14 +33,14 @@ describe('Note app', function() {
 
     describe('when logged in', function () {
         beforeEach(function () {
-            cy.login({username: 'testuser', password: 'testpassword'})
+            cy.login({ username: 'testuser', password: 'testpassword' })
         })
         it('user can post a note', function () {
             cy.get('#note-create').click()
-    
+
             cy.get('#note-input').type('Cypress is fun!')
             cy.get('#note-submit').click()
-    
+
             cy.contains('Cypress is fun!')
         })
         describe('and a note exists', function () {
@@ -49,12 +49,12 @@ describe('Note app', function() {
                 cy.get('input').type('another note cypress')
                 cy.contains('save').click()
             })
-      
+
             it('it can be made important', function () {
                 cy.contains('another note cypress')
                     .contains('make important')
                     .click()
-        
+
                 cy.contains('another note cypress')
                     .contains('make not important')
             })

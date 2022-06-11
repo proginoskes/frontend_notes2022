@@ -24,8 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login', ({username, password}) => {
-    cy.request('POST', 'http://localhost:3001/api/login', { 
+Cypress.Commands.add('login', ({ username, password }) => {
+    cy.request('POST', 'http://localhost:3001/api/login', {
         username: username, password: password
     }).then(response => {
         localStorage.setItem('loggedNoteappUser', JSON.stringify(response.body))
